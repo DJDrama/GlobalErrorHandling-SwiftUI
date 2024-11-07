@@ -31,6 +31,7 @@ struct ContentView: View {
         })
         .sheet(isPresented: $isPresented, content: {
             DetailScreen()
+                .withErrorView()
         })
         .padding()
     }
@@ -44,11 +45,13 @@ struct ContentViewContainer: View {
     var body: some View {
         NavigationStack{
             ContentView()
-        }
+        }.withErrorView()
+        /*
         .environment(\.showError, ShowErrorAction(action: showError))
         .overlay(alignment: .bottom) {
             errorWrapper != nil ? ErrorView(errorWrapper: $errorWrapper) : nil
         }
+         */
     }
     
     private func showError(error: Error, guidance: String) {

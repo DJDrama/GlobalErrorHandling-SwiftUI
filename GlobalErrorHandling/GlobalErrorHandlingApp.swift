@@ -9,18 +9,12 @@ import SwiftUI
 
 @main
 struct GlobalErrorHandlingApp: App {
-    @State private var errorWrapper: ErrorWrapper?
     var body: some Scene {
         WindowGroup {
             NavigationStack{
                 ContentView()
-            }.environment(\.showError, ShowErrorAction(action: showError))
-                .overlay(alignment: .bottom) {
-                    errorWrapper != nil ? ErrorView(errorWrapper: $errorWrapper) : nil
-                }
+            }.withErrorView()
+    
         }
-    }
-    private func showError(error: Error, guidance: String) {
-        errorWrapper = ErrorWrapper(error: error, guidance: guidance)
     }
 }

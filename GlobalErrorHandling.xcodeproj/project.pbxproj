@@ -16,6 +16,8 @@
 		D25053A42CDC664F00BB387E /* ShowErrorEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25053A32CDC664F00BB387E /* ShowErrorEnvironmentKey.swift */; };
 		D25053A62CDC933700BB387E /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25053A52CDC933700BB387E /* DetailScreen.swift */; };
 		D25053A82CDC941700BB387E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25053A72CDC941700BB387E /* ErrorView.swift */; };
+		D25053AB2CDC98A800BB387E /* ErrorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25053AA2CDC98A800BB387E /* ErrorModifier.swift */; };
+		D25053AE2CDC990D00BB387E /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25053AD2CDC990D00BB387E /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		D25053A32CDC664F00BB387E /* ShowErrorEnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorEnvironmentKey.swift; sourceTree = "<group>"; };
 		D25053A52CDC933700BB387E /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
 		D25053A72CDC941700BB387E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		D25053AA2CDC98A800BB387E /* ErrorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModifier.swift; sourceTree = "<group>"; };
+		D25053AD2CDC990D00BB387E /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 		D250538E2CDBAE8E00BB387E /* GlobalErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
+				D25053AC2CDC990300BB387E /* Extensions */,
+				D25053A92CDC989B00BB387E /* View Modifiers */,
 				D25053A22CDC663600BB387E /* Environment Values */,
 				D250539D2CDC660000BB387E /* Custom Errors */,
 				D250538F2CDBAE8E00BB387E /* GlobalErrorHandlingApp.swift */,
@@ -96,6 +102,22 @@
 				D25053A32CDC664F00BB387E /* ShowErrorEnvironmentKey.swift */,
 			);
 			path = "Environment Values";
+			sourceTree = "<group>";
+		};
+		D25053A92CDC989B00BB387E /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D25053AA2CDC98A800BB387E /* ErrorModifier.swift */,
+			);
+			path = "View Modifiers";
+			sourceTree = "<group>";
+		};
+		D25053AC2CDC990300BB387E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D25053AD2CDC990D00BB387E /* View+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,12 +191,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25053A12CDC662600BB387E /* SampleError.swift in Sources */,
+				D25053AE2CDC990D00BB387E /* View+Extensions.swift in Sources */,
 				D25053A42CDC664F00BB387E /* ShowErrorEnvironmentKey.swift in Sources */,
 				D25053A62CDC933700BB387E /* DetailScreen.swift in Sources */,
 				D250539F2CDC660D00BB387E /* ErrorWrapper.swift in Sources */,
 				D25053A82CDC941700BB387E /* ErrorView.swift in Sources */,
 				D25053922CDBAE8E00BB387E /* ContentView.swift in Sources */,
 				D25053902CDBAE8E00BB387E /* GlobalErrorHandlingApp.swift in Sources */,
+				D25053AB2CDC98A800BB387E /* ErrorModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
