@@ -15,8 +15,8 @@ struct GlobalErrorHandlingApp: App {
             NavigationStack{
                 ContentView()
             }.environment(\.showError, ShowErrorAction(action: showError))
-                .sheet(item: $errorWrapper){ errorWrapper in
-                    Text(errorWrapper.guidance)
+                .overlay(alignment: .bottom) {
+                    errorWrapper != nil ? ErrorView(errorWrapper: $errorWrapper) : nil
                 }
         }
     }

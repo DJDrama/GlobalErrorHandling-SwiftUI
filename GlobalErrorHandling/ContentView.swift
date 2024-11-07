@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.showError) private var showError
+    @State private var isPresented: Bool = false
     
     var body: some View {
         VStack {
@@ -20,6 +21,17 @@ struct ContentView: View {
                 DetailScreen()
             }
         }
+        .navigationTitle("ContentView")
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing){
+                Button("Open Sheet") {
+                    isPresented = true
+                }
+            }
+        })
+        .sheet(isPresented: $isPresented, content: {
+            DetailScreen()
+        })
         .padding()
     }
 }
@@ -34,8 +46,8 @@ struct ContentViewContainer: View {
             ContentView()
         }
         .environment(\.showError, ShowErrorAction(action: showError))
-        .sheet(item: $errorWrapper){ errorWrapper in
-           ErrorView(errorWrapper: errorWrapper)
+        .overlay(alignment: .bottom) {
+            errorWrapper != nil ? ErrorView(errorWrapper: $errorWrapper) : nil
         }
     }
     
